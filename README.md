@@ -31,7 +31,7 @@ Users can securely sign up, log in, and manage their personal bookmarks.
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/bookmark-app.git
+git clone https://github.com/nirajnil2/bookmark.git
 cd bookmark-app
 ```
 
