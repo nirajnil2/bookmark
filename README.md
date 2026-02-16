@@ -21,7 +21,6 @@ Users can securely sign up, log in, and manage their personal bookmarks.
 
 - **Frontend:** Next.js (App Router)
 - **Backend:** Supabase (Auth + Database)
-- **Database:** PostgreSQL
 - **Styling:** Tailwind CSS
 - **Deployment:** Vercel
 
@@ -69,30 +68,27 @@ http://localhost:3000
 
 ---
 
-## 🗄 Database Schema
 
-Create a `bookmarks` table in Supabase:
-
-| Column      | Type        |
-|------------|------------|
-| id         | uuid (PK)  |
-| user_id    | uuid (FK)  |
-| title      | text       |
-| url        | text       |
-| created_at | timestamp  |
-
-Enable Row Level Security (RLS) and add policy:
-
-- Users can only access their own bookmarks
 
 ---
 
-## 🔐 Authentication Flow
+## 🗄 Database & Authentication
 
-- User signs up / logs in
-- Supabase stores user in `auth.users`
-- `user.id` is linked to bookmarks table
-- Each user sees only their own saved links
+This project uses Supabase Authentication for handling users.
+
+When a user signs up with email and password:
+
+- Supabase automatically stores the user in the `auth.users` table.
+- Passwords are securely hashed.
+- No custom database tables are created in this version.
+
+Authentication Features:
+- Email & Password Signup
+- Secure Login
+- Session Management
+- Protected Routes
+
+All authentication logic is handled by Supabase.
 
 ---
 
@@ -123,7 +119,6 @@ utils/
 ## 👨‍💻 Author
 
 Niraj Kumar  
-Blockchain & Full Stack Developer  
 India 🇮🇳
 
 ---
@@ -141,6 +136,5 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out our [Next.js deployment documentation](https://bookmarkproject-pyd0hni5u-niraj-kumars-projects-efcd4894.vercel.app/) for more details.
